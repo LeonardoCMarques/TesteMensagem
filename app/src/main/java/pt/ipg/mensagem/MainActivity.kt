@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val mensagem = editTextMensagem.text.toString()
 
         if(mensagem.isBlank()){
-            editTextMensagem.error = "Introduza uma mensagem"
+            editTextMensagem.error = getString(R.string.MensagemVazia)
             return
         }
 

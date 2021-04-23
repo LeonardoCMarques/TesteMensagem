@@ -4,4 +4,5 @@
     <string name="mensagem">Mensagem</string>
     <string name="enviar">Enviar</string>
     <string name="mensagem_recebida">Mensagem recebida</string>
+    <string name="MensagemVazia">Introduza uma mensagem</string>
 </resources>
