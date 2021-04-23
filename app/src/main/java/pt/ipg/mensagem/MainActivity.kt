@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     companion object{
 
         val Info_Extra_Mensagem = "Mensagem"
+        val Info_Hora = "Hora"
 
 
     }
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         val mensagem = editTextMensagem.text.toString()
 
+        val hora = Calendar.getInstance().get(Calendar.HOUR_OF_DAY).toString()
+
         if(mensagem.isBlank()){
             editTextMensagem.error = getString(R.string.MensagemVazia)
             return
@@ -29,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, MostraMensagemActivity::class.java)
         intent.putExtra(Info_Extra_Mensagem, mensagem)
+        intent.putExtra(Info_Hora, hora)
+
         startActivity(intent)
 
     }
