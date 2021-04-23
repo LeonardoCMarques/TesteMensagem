@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
     companion object{
 
-        public val Info_Extra_Mensagem = "Mensagem"
+        val Info_Extra_Mensagem = "Mensagem"
 
 
     }
@@ -22,9 +22,13 @@ class MainActivity : AppCompatActivity() {
 
         val mensagem = editTextMensagem.text.toString()
 
+        if(mensagem.isBlank()){
+            editTextMensagem.error = "Introduza uma mensagem"
+            return
+        }
+
         val intent = Intent(this, MostraMensagemActivity::class.java)
         intent.putExtra(Info_Extra_Mensagem, mensagem)
-
         startActivity(intent)
 
     }
