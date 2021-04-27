@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         val mensagem = editTextMensagem.text.toString()
 
-        val hora = Calendar.getInstance().get(Calendar.DATE).toString()+"/"+Calendar.getInstance().get(Calendar.MONTH).toString()+"/"+ Calendar.getInstance().get(Calendar.YEAR).toString()+" "+Calendar.getInstance().get(Calendar.HOUR_OF_DAY).toString()+":"+Calendar.getInstance().get(Calendar.MINUTE).toString()+":"+ Calendar.getInstance().get(Calendar.SECOND).toString()
+        val hora = Calendar.getInstance().get(Calendar.DATE).toString()+"/"+(Calendar.getInstance().get(Calendar.MONTH).toInt()+1).toString()+"/"+ Calendar.getInstance().get(Calendar.YEAR).toString()+" "+Calendar.getInstance().get(Calendar.HOUR_OF_DAY).toString()+":"+Calendar.getInstance().get(Calendar.MINUTE).toString()+":"+ Calendar.getInstance().get(Calendar.SECOND).toString()
 
         if(mensagem.isBlank()){
             editTextMensagem.error = getString(R.string.MensagemVazia)
