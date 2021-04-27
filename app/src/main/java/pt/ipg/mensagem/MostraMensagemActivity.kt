@@ -22,5 +22,6 @@ class MostraMensagemActivity : AppCompatActivity() {
 
         val textViewData = findViewById<TextView>(R.id.textViewData)
         textViewData.setText(hora)
+
     }
 }
