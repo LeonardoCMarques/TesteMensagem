@@ -14,14 +14,13 @@ class MostraMensagemActivity : AppCompatActivity() {
 
 
         val mensagem = intent.getStringExtra(MainActivity.Info_Extra_Mensagem)
-
-        val hora = intent.getStringExtra(MainActivity.Info_Hora)
+        val data = intent.getSerializableExtra(MainActivity.Info_Extra_Data)as Date
 
         val textViewMensagem = findViewById<TextView>(R.id.textViewMensagem)
         textViewMensagem.setText(mensagem)
 
         val textViewData = findViewById<TextView>(R.id.textViewData)
-        textViewData.setText(hora)
+        textViewData.setText(data.toString())
 
     }
 }

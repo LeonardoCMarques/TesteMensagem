@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     companion object{
 
         const val Info_Extra_Mensagem = "Mensagem"
-        const val Info_Hora = "Hora"
         const val Info_Extra_Data = "Data"
 
     }
@@ -25,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         val mensagem = editTextMensagem.text.toString()
 
         val data = Date()
-        //val hora = Calendar.getInstance().get(Calendar.DATE).toString()+"/"+(Calendar.getInstance().get(Calendar.MONTH).toInt()+1).toString()+"/"+ Calendar.getInstance().get(Calendar.YEAR).toString()+" "+Calendar.getInstance().get(Calendar.HOUR_OF_DAY).toString()+":"+Calendar.getInstance().get(Calendar.MINUTE).toString()+":"+ Calendar.getInstance().get(Calendar.SECOND).toString()
 
         if(mensagem.isBlank()){
             editTextMensagem.error = getString(R.string.MensagemVazia)
@@ -35,8 +33,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, MostraMensagemActivity::class.java).apply {
 
             putExtra(Info_Extra_Mensagem, mensagem)
-            //putExtra(Info_Hora, hora)
-            putExtra("Data", data)
+            putExtra(Info_Extra_Data, data)
 
         }
 
