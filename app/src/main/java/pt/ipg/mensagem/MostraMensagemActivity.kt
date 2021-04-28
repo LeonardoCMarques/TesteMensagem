@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.service.autofill.TextValueSanitizer
 import android.widget.TextView
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MostraMensagemActivity : AppCompatActivity() {
@@ -20,7 +21,8 @@ class MostraMensagemActivity : AppCompatActivity() {
         textViewMensagem.setText(mensagem)
 
         val textViewData = findViewById<TextView>(R.id.textViewData)
-        textViewData.setText(data.toString())
+        val df = SimpleDateFormat("HH:mm:ss")
+        textViewData.setText(df.format(data))
 
     }
 }
