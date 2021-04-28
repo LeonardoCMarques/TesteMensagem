@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
     }
     companion object{
 
-        val Info_Extra_Mensagem = "Mensagem"
-        val Info_Hora = "Hora"
-
+        const val Info_Extra_Mensagem = "Mensagem"
+        const val Info_Hora = "Hora"
+        const val Info_Extra_Data = "Data"
 
     }
     fun enviaMensagem(view: View) {
@@ -24,16 +24,21 @@ class MainActivity : AppCompatActivity() {
 
         val mensagem = editTextMensagem.text.toString()
 
-        val hora = Calendar.getInstance().get(Calendar.DATE).toString()+"/"+(Calendar.getInstance().get(Calendar.MONTH).toInt()+1).toString()+"/"+ Calendar.getInstance().get(Calendar.YEAR).toString()+" "+Calendar.getInstance().get(Calendar.HOUR_OF_DAY).toString()+":"+Calendar.getInstance().get(Calendar.MINUTE).toString()+":"+ Calendar.getInstance().get(Calendar.SECOND).toString()
+        val data = Date()
+        //val hora = Calendar.getInstance().get(Calendar.DATE).toString()+"/"+(Calendar.getInstance().get(Calendar.MONTH).toInt()+1).toString()+"/"+ Calendar.getInstance().get(Calendar.YEAR).toString()+" "+Calendar.getInstance().get(Calendar.HOUR_OF_DAY).toString()+":"+Calendar.getInstance().get(Calendar.MINUTE).toString()+":"+ Calendar.getInstance().get(Calendar.SECOND).toString()
 
         if(mensagem.isBlank()){
             editTextMensagem.error = getString(R.string.MensagemVazia)
             return
         }
 
-        val intent = Intent(this, MostraMensagemActivity::class.java)
-        intent.putExtra(Info_Extra_Mensagem, mensagem)
-        intent.putExtra(Info_Hora, hora)
+        val intent = Intent(this, MostraMensagemActivity::class.java).apply {
+
+            putExtra(Info_Extra_Mensagem, mensagem)
+            //putExtra(Info_Hora, hora)
+            putExtra("Data", data)
+
+        }
 
         startActivity(intent)
 
