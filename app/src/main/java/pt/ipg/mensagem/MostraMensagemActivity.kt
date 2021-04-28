@@ -21,7 +21,7 @@ class MostraMensagemActivity : AppCompatActivity() {
         textViewMensagem.setText(mensagem)
 
         val textViewData = findViewById<TextView>(R.id.textViewData)
-        val df = SimpleDateFormat("HH:mm:ss")
+        val df = SimpleDateFormat("HH:mm:ss") //formato da data
         textViewData.setText(df.format(data))
 
     }
